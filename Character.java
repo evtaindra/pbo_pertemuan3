@@ -13,6 +13,9 @@ public class Character {
     public void upLevel(){
         this.level +=1;
     }
+    public void downLevel(){
+        this.level -=1;
+    }
     public void showName(){    
         System.out.println("Name: " +this.name);  
     }

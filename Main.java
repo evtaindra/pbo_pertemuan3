@@ -6,5 +6,8 @@ public class Main {
         Cecilia.showHealthPoints();
         Cecilia.showName();
         Cecilia.upLevel();
+        Cecilia.showLevel();
+        Cecilia.downLevel();
+        Cecilia.showLevel();
     }
 }
