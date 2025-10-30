@@ -24,6 +24,40 @@ public class Character {
         System.out.println("Health Points: " +this.healthPoints);
     }
 
+    public void upheal(int healthPoints){
+        this.healthPoints += healthPoints;
+        if(this.healthPoints > 100)
+        {
+            this.healthPoints = 100;
+        }
+    }
+    public int uphealReturn(int healthPoints){
+        this.healthPoints += healthPoints;
+        if(this.healthPoints > 100)
+        {
+            this.healthPoints = 100;
+        }
+        return this.healthPoints;
+    }
+    public void up20Health(){
+        this.healthPoints += 20;
+        if(this.healthPoints > 100)
+        {
+            this.healthPoints = 100;
+        }
+    }
+    public void downHealth(int healthPoints){
+        this.healthPoints -= healthPoints;
+        if(this.healthPoints < 0)
+        {
+            this.healthPoints = 0;
+        }
+    }
+
+    public void changeName(String newName){
+        this.name = newName;
+    }
+
     //constructor
     public Character(String xname,int xlevel,int xhealthPoints){
         this.name = xname;
