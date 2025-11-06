@@ -6,62 +6,48 @@ public class Character {
     private int level;
     private int healthPoints;
 
-    //method = function
-    public void showLevel(){
-        System.out.println("Level: " +this.level);
-    }
-    public void upLevel(){
-        this.level +=1;
-    }
-    public void downLevel(){
-        this.level -=1;
-    }
-    public void showName(){    
-        System.out.println("Name: " +this.name);  
-    }
-
-    public void showHealthPoints(){
-        System.out.println("Health Points: " +this.healthPoints);
-    }
-
-    public void upheal(int healthPoints){
-        this.healthPoints += healthPoints;
-        if(this.healthPoints > 100)
-        {
-            this.healthPoints = 100;
-        }
-    }
-    public int uphealReturn(int healthPoints){
-        this.healthPoints += healthPoints;
-        if(this.healthPoints > 100)
-        {
-            this.healthPoints = 100;
-        }
-        return this.healthPoints;
-    }
-    public void up20Health(){
-        this.healthPoints += 20;
-        if(this.healthPoints > 100)
-        {
-            this.healthPoints = 100;
-        }
-    }
-    public void downHealth(int healthPoints){
-        this.healthPoints -= healthPoints;
-        if(this.healthPoints < 0)
-        {
-            this.healthPoints = 0;
-        }
-    }
-
-    public void changeName(String newName){
-        this.name = newName;
-    }
-
     //constructor
     public Character(String xname,int xlevel,int xhealthPoints){
         this.name = xname;
         this.level = xlevel;
         this.healthPoints = xhealthPoints;
     }
+    //setter dan getter
+    public void setName(String xname){
+        this.name = xname;
+    }
+    public String getName(){
+        return this.name;
+    }    
+    public void setLevel(int xlevel){
+        this.level = xlevel;
+    }
+    public int getLevel(){
+        return this.level;
+    }
+    public void setHealthPoints(int xhealthPoints){
+        this.healthPoints = xhealthPoints;
+    }
+    public int getHealthPoints(){
+        return this.healthPoints;
+    }
+
+    public void showinfo(){
+        System.out.println("-----------------------");
+        System.out.println("Nama karakter: " + this.name);
+        System.out.println("Level karakter: " + this.level);
+        System.out.println("Health Points karakter: " + this.healthPoints);
+        System.out.println("-----------------------\n");
+    }
+
+   public int levelUp(){
+        return this.level += 1;
+   }
+    public int takeDamage(int damage){
+        return this.healthPoints -= damage;
+    }
+    public int heal(int healAmount){
+        return this.healthPoints += healAmount;
+    }
+
 }
