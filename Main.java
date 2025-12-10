@@ -1,23 +1,23 @@
 public class Main {
+
     public static void main(String[] args){
-        Character Cecilia = new Character("Evta",2,80);
-        System.out.println("Nama karakter: " + Cecilia.getName());
-        Cecilia.setName("Cecilia");
+       Player Player1 = new Player("Alice", 100, 0, 0, 0, 1);
+       Mob zombie = new Mob("Zombie", 50, 10, 5, 2, true);
 
-        System.out.println("Nama karakter setelah diubah: " + Cecilia.getName());
+       Player1.displayStatus();
+       Player1.addItem();
+       Player1.levelUp();
+       Player1.move(5, 10,9);
 
-        System.out.println("Level karakter: " + Cecilia.getLevel());
-        
-        System.out.println("Health Points karakter: " + Cecilia.getHealthPoints());
+       zombie.displayStatus();
+       zombie.takeDamage(15);
+       zombie.aggro();
+       zombie.move(3, 4,7);
 
-        System.out.println("karakter Kena Damage: " + Cecilia.takeDamage(30));
-        Cecilia.showinfo();
-
-        System.out.println("karakter Disembuhkan: " + Cecilia.heal(20));
-        Cecilia.showinfo();
-
-        System.out.println("Level karakter setelah naik: " + Cecilia.levelUp());
-        Cecilia.showinfo();
-
+       Entity[] entities = {Player1, zombie};
+       for (Entity entity : entities) {
+           entity.displayStatus();
+           System.out.println("------------");
+       }
     }
 }
