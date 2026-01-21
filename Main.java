@@ -1,35 +1,23 @@
 public class Main {
 
     public static void main(String[] args){
-       Player Player1 = new Player("Alice", 100, 0, 0, 0, 1);
-      // Mob zombie = new Mob("Zombie", 50, 10, 5, 2, true);
+       Player alex = new Player("Alex", 100, 10, 70, 5, 5);
 
-       Player1.displayStatus();
-        Item sword = new Item("Sword", 100);
-        Item shield = new Item("Shield", 150);
-        Item potion = new Item("Health Potion", 1);
-        
+        alex.displayStatus();
 
-       Player1.addItem(sword);
-       Player1.addItem(shield);
-       Player1.addItem(potion);
+        Item diamondHelm = new Item("Diamond Helmet", 363);
+        Item netheriteChest = new Item("Netherite Chestplate", 592);
 
+        alex.equipItem("helmet", diamondHelm);
+        alex.equipItem("chestplate", netheriteChest);
 
-        Player1.showInventory();
+        alex.showEquipment();
 
+        alex.unequipItem("helmet");
 
-      // Player1.levelUp();
-       //Player1.move(5, 10,9);
+        alex.showEquipment();
+        alex.showInventory();  // helm seharusnya balik ke inventory
 
-     //  zombie.displayStatus();
-       //zombie.takeDamage(15);
-      // zombie.aggro();
-      // zombie.move(3, 4,7);
-
-    //    Entity[] entities = {Player1, zombie};
-    //    for (Entity entity : entities) {
-    //        entity.displayStatus();
-    //        System.out.println("------------");
-    //    }
+        alex.displayStatus();
     }
 }
